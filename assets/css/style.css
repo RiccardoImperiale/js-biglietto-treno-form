@@ -33,10 +33,9 @@ h1 {
 
 .card {
     background-color: white;
-    /* height: 300px; */
     width: 100%;
     border-radius: 2rem;
-    padding: 5rem 3rem 3rem 3rem;
+    padding: 4rem 3rem 3rem 3rem;
 }
 
 form {
@@ -102,6 +101,53 @@ form {
             cursor: pointer;
             position: absolute;
             left: -1rem;
+        }
+    }
+}
+
+form {
+    display: none;
+}
+
+#ticket {
+    /* display: none; */
+
+    & h3 {
+        margin-top: -1rem;
+        padding-left: 1rem;
+    }
+
+    .ticket_info {
+        border: 1px solid var(--ttc-primary);
+        margin-top: 1rem;
+        display: flex;
+        border-radius: .5rem;
+        overflow: hidden;
+
+        .left {
+            width: 30%;
+            padding: 1rem;
+            background-color: var(--ttc-primary);
+            color: white;
+
+            #passenger_name {
+                margin-top: .5rem;
+            }
+        }
+
+        .right {
+            width: 70%;
+            padding: 1rem;
+            background-color: #fd45891b;
+            display: flex;
+
+            .details {
+                flex: 1;
+
+                & h4 {
+                    margin-bottom: 3rem;
+                }
+            }
         }
     }
 }

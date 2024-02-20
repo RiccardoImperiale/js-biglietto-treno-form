@@ -7,6 +7,10 @@ const inputKm = document.querySelector('#passenger_km');
 const inputAge = document.querySelector('#age_range');
 const button = document.querySelector('button');
 
+const form = document.querySelector('form');
+const ticket = document.querySelector('#ticket');
+const title = document.querySelector('h1');
+
 button.addEventListener('click', (event) => {
     event.preventDefault();
     const passengerName = inputName.value;
@@ -31,6 +35,12 @@ button.addEventListener('click', (event) => {
     // ensure the final price has a maximum of two decimal places
     const finalPrice = tripPrice.toFixed(2);
     console.log(`The final price is ${finalPrice}€ -> ${discountApplied}`);
+    // hide form
+    form.style.display = 'none';
+    // show final ticket
+    ticket.style.display = 'flex';
+    // change h1 title
+    title.innerText = 'Your Ticket'
 })
 
 
