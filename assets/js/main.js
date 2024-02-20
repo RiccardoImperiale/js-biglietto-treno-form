@@ -13,6 +13,7 @@ const title = document.querySelector('h1');
 const ticketName = document.querySelector('#ticket #passenger_name');
 const ticketPrice = document.querySelector('.ticket_price');
 const ticketOffer = document.querySelector('.ticket_offer');
+const ticketReset = document.querySelector('#reset_ticket');
 
 button.addEventListener('click', (event) => {
     event.preventDefault();
@@ -50,4 +51,6 @@ button.addEventListener('click', (event) => {
     ticketOffer.innerText = discountApplied;
 })
 
-
+ticketReset.addEventListener('click', ()=> {
+    window.location.reload();
+})

@@ -105,16 +105,19 @@ form {
     }
 }
 
-form {
-    /* display: none; */
-}
-
 #ticket {
-    /* display: none; */
+    display: none;
 
-    & h3 {
+    .ticket_title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         margin-top: -1rem;
-        padding-left: 1rem;
+        padding: 0 1rem;
+
+        #reset_ticket {
+            cursor: pointer;
+        }
     }
 
     .ticket_info {
