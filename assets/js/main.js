@@ -14,6 +14,8 @@ const ticketName = document.querySelector('#ticket #passenger_name');
 const ticketPrice = document.querySelector('.ticket_price');
 const ticketOffer = document.querySelector('.ticket_offer');
 const ticketReset = document.querySelector('#reset_ticket');
+const ticketCP = document.querySelector('.CP_Code');
+const ticketCoach = document.querySelector('.coach_number');
 
 button.addEventListener('click', (event) => {
     event.preventDefault();
@@ -21,6 +23,10 @@ button.addEventListener('click', (event) => {
     const passengerKm = Number(inputKm.value);
     const passengerAge = inputAge.value;
     let discountApplied;
+    // random number between 1 and 10
+    const random2Number = Math.floor((Math.random() * 10) + 1);
+    // random 5-digits number
+    const random5Number = Math.floor(Math.random() * 99999);
     // get name, kilometers and age
     console.log(passengerName, passengerKm, passengerAge);
     // get full trip price 
@@ -49,8 +55,12 @@ button.addEventListener('click', (event) => {
     ticketName.innerText = passengerName;
     ticketPrice.innerText = `${finalPrice}€`;
     ticketOffer.innerText = discountApplied;
+    // add random numbers
+    ticketCoach.innerText = random2Number;
+    ticketCP.innerText = random5Number;
 })
 
-ticketReset.addEventListener('click', ()=> {
+// refresh page
+ticketReset.addEventListener('click', () => {
     window.location.reload();
 })
