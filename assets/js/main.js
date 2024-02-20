@@ -1,6 +1,15 @@
-// const pricePerKm = 0.21;
-// const kidsDiscount = 20;
-// const eldersDiscount = 40;
+const pricePerKm = 0.21;
+const kidsDiscount = 20;
+const eldersDiscount = 40;
+
+const button = document.querySelector('button');
+const passengerName = document.querySelector('#passenger_name');
+const passengerKm = document.querySelector('#passenger_km');
+const passengerAge = document.querySelector('#age_range');
+
+button.addEventListener('click', () => {
+    console.log(passengerName.value, passengerAge.value, passengerKm.value);
+})
 
 // get kilometers and age of the user
 // const userKm = Number(prompt('How many kilometers would you like to travel?'));
