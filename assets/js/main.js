@@ -10,6 +10,9 @@ const button = document.querySelector('button');
 const form = document.querySelector('form');
 const ticket = document.querySelector('#ticket');
 const title = document.querySelector('h1');
+const ticketName = document.querySelector('#ticket #passenger_name');
+const ticketPrice = document.querySelector('.ticket_price');
+const ticketOffer = document.querySelector('.ticket_offer');
 
 button.addEventListener('click', (event) => {
     event.preventDefault();
@@ -25,12 +28,12 @@ button.addEventListener('click', (event) => {
     // subtract 20% from the full price if the user is a minor
     if (passengerAge === 'minor') {
         tripPrice -= tripPrice / 100 * kidsDiscount;
-        discountApplied = 'Kids Discount Applied';
+        discountApplied = 'Kids Price';
     } else if (passengerAge === 'senior') {
         tripPrice -= tripPrice / 100 * eldersDiscount;
-        discountApplied = 'Elders Discount Applied';
+        discountApplied = 'Elders Price';
     } else {
-        discountApplied = 'Adult Price';
+        discountApplied = 'Standard Price';
     }
     // ensure the final price has a maximum of two decimal places
     const finalPrice = tripPrice.toFixed(2);
@@ -38,9 +41,13 @@ button.addEventListener('click', (event) => {
     // hide form
     form.style.display = 'none';
     // show final ticket
-    ticket.style.display = 'flex';
+    ticket.style.display = 'block';
     // change h1 title
     title.innerText = 'Your Ticket'
+    // change ticket name and price
+    ticketName.innerText = passengerName;
+    ticketPrice.innerText = `${finalPrice}€`;
+    ticketOffer.innerText = discountApplied;
 })
 
 

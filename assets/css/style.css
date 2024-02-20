@@ -106,7 +106,7 @@ form {
 }
 
 form {
-    display: none;
+    /* display: none; */
 }
 
 #ticket {
@@ -137,12 +137,12 @@ form {
 
         .right {
             width: 70%;
-            padding: 1rem;
             background-color: #fd45891b;
             display: flex;
 
             .details {
                 flex: 1;
+                padding: 1rem;
 
                 & h4 {
                     margin-bottom: 3rem;
