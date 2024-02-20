@@ -16,6 +16,7 @@ const ticketOffer = document.querySelector('.ticket_offer');
 const ticketReset = document.querySelector('#reset_ticket');
 const ticketCP = document.querySelector('.CP_Code');
 const ticketCoach = document.querySelector('.coach_number');
+const gif = document.querySelector('#gif');
 
 button.addEventListener('click', (event) => {
     event.preventDefault();
@@ -25,8 +26,8 @@ button.addEventListener('click', (event) => {
     let discountApplied;
     // random number between 1 and 10
     const random2Number = Math.floor((Math.random() * 10) + 1);
-    // random 5-digits number
-    const random5Number = Math.floor(Math.random() * 99999);
+    // random 5-digits number between 10000 and 99999
+    const random5Number = Math.floor((Math.random() * 90000) + 10000);
     // get name, kilometers and age
     console.log(passengerName, passengerKm, passengerAge);
     // get full trip price 
@@ -47,8 +48,8 @@ button.addEventListener('click', (event) => {
     console.log(`The final price is ${finalPrice}€ -> ${discountApplied}`);
     // hide form
     form.style.display = 'none';
-    // show final ticket
-    ticket.style.display = 'block';
+    // show gif
+    showGif();
     // change h1 title
     title.innerText = 'Your Ticket'
     // change ticket name and price
@@ -64,3 +65,15 @@ button.addEventListener('click', (event) => {
 ticketReset.addEventListener('click', () => {
     window.location.reload();
 })
+
+// show gif before ticket
+function showGif() {
+    const gif = document.getElementById("gif");
+    gif.style.display = "flex";
+
+    setTimeout(function () {
+        gif.style.display = "none";
+        // show final ticket
+        ticket.style.display = 'block';
+    }, 1500);
+}
