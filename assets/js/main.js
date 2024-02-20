@@ -25,10 +25,6 @@ button.addEventListener('click', (event) => {
     const passengerKm = Number(inputKm.value);
     const passengerAge = inputAge.value;
     let discountApplied;
-    // random number between 1 and 10
-    const random2Number = Math.floor((Math.random() * 10) + 1);
-    // random 5-digits number between 10000 and 99999
-    const random5Number = Math.floor((Math.random() * 90000) + 10000);
     // get name, kilometers and age
     console.log(passengerName, passengerKm, passengerAge);
     // get full trip price 
@@ -51,15 +47,8 @@ button.addEventListener('click', (event) => {
     form.style.display = 'none';
     // show gif
     showGif();
-    // change h1 title
-    title.innerText = 'Your Ticket'
-    // change ticket name and price
-    ticketName.innerText = passengerName;
-    ticketPrice.innerText = `${finalPrice}€`;
-    ticketOffer.innerText = discountApplied;
-    // add random numbers
-    ticketCoach.innerText = random2Number;
-    ticketCP.innerText = random5Number;
+    // populate ticket 
+    populateTicket(finalPrice, passengerName, discountApplied);
 })
 
 // reset ticket 
@@ -72,6 +61,23 @@ ticketReset.addEventListener('click', () => {
 ticketRefresh.addEventListener('click', () => {
     window.location.reload();
 })
+
+// populate ticket 
+function populateTicket(finalPrice, passengerName, discountApplied) {
+    // random number between 1 and 10
+    const random2Number = Math.floor((Math.random() * 10) + 1);
+    // random 5-digits number between 10000 and 99999
+    const random5Number = Math.floor((Math.random() * 90000) + 10000);
+    // change h1 title
+    title.innerText = 'Your Ticket'
+    // change ticket name and price
+    ticketName.innerText = passengerName;
+    ticketPrice.innerText = `${finalPrice}€`;
+    ticketOffer.innerText = discountApplied;
+    // add random numbers
+    ticketCoach.innerText = random2Number;
+    ticketCP.innerText = random5Number;
+}
 
 // show gif before ticket
 function showGif() {
