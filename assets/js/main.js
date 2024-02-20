@@ -13,7 +13,8 @@ const title = document.querySelector('h1');
 const ticketName = document.querySelector('#ticket #passenger_name');
 const ticketPrice = document.querySelector('.ticket_price');
 const ticketOffer = document.querySelector('.ticket_offer');
-const ticketReset = document.querySelector('#reset_ticket');
+const ticketRefresh = document.querySelector('#reset_ticket');
+const ticketReset = document.querySelector('#reset');
 const ticketCP = document.querySelector('.CP_Code');
 const ticketCoach = document.querySelector('.coach_number');
 const gif = document.querySelector('#gif');
@@ -61,8 +62,14 @@ button.addEventListener('click', (event) => {
     ticketCP.innerText = random5Number;
 })
 
-// refresh page
+// reset ticket 
 ticketReset.addEventListener('click', () => {
+    inputName.value = '';
+    inputKm.value = '';
+})
+
+// refresh page
+ticketRefresh.addEventListener('click', () => {
     window.location.reload();
 })
 
