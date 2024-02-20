@@ -7,7 +7,8 @@ const inputKm = document.querySelector('#passenger_km');
 const inputAge = document.querySelector('#age_range');
 const button = document.querySelector('button');
 
-button.addEventListener('click', () => {
+button.addEventListener('click', (event) => {
+    event.preventDefault();
     const passengerName = inputName.value;
     const passengerKm = Number(inputKm.value);
     const passengerAge = inputAge.value;
